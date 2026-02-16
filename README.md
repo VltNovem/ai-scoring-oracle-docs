@@ -44,25 +44,29 @@ Perform a full security audit on a specific contract.
 GET /analyze/0xad1da118f884df08b00fa6fe7b41a52912c17fbf
 
 ## 💻 Code Example (Python)
-code
-Python
-download
-content_copy
-expand_less
+
+```python
 import requests
 
+# The API endpoint for project analysis
 API_URL = "https://ai-score-agent.onrender.com/analyze/"
+# Target token contract address
 CONTRACT_ADDRESS = "Dt7rNPRfpmf4P8QvWQgyh5S7pnp4nQWYUmUwrarwpump"
+# Your secret beta key
 HEADERS = {"X-API-KEY": "your_test_key_here"}
 
-response = requests.get(f"{API_URL}{CONTRACT_ADDRESS}", headers=HEADERS)
-data = response.json()
+try:
+    response = requests.get(f"{API_URL}{CONTRACT_ADDRESS}", headers=HEADERS)
+    data = response.json()
 
-if data.get("risk_score", 100) < 30:
-    print(f"✅ Safe to trade: {data['project_name']}")
-else:
-    print(f"⚠️ High Risk! Verdict: {data['verdict']}")
-    print(f"Warnings: {data['warnings']}")
+    if data.get("risk_score", 100) < 30:
+        print(f"✅ Safe to trade: {data.get('project_name')}")
+    else:
+        print(f"⚠️ High Risk! Verdict: {data.get('verdict')}")
+        print(f"Warnings: {data.get('warnings')}")
+
+except Exception as e:
+    print(f"Error connecting to Oracle: {e}")
 
 ## 📊 Understanding the Output
 Field	Description
