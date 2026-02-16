@@ -11,15 +11,15 @@ Unlike generic LLMs, this oracle combines live on-chain security audits with rea
 
 ## 🚀 Key Features for Agent Developers
 
-Zero API Lag: Uses search-based indexing to see new token liquidity the second it hits the market.
+**Zero API Lag:** Uses search-based indexing to see new token liquidity the second it hits the market.
 
-Multi-Chain Support: Integrated safety flags for Solana (via RugCheck) and EVM (via GoPlus).
+**Multi-Chain Support:** Integrated safety flags for Solana (via RugCheck) and EVM (via GoPlus).
 
-Insider Insight: Automated detection of top-holder clusters and potential Sybil farms.
+**Insider Insight:** Automated detection of top-holder clusters and potential Sybil farms.
 
-Scoring Engine: A weighted 0–100 risk score optimized for high-frequency scalping.
+**Scoring Engine:** A weighted 0–100 risk score optimized for high-frequency scalping.
 
-Machine-Ready: Strictly JSON output, designed for easy integration with frameworks like ElizaOS, Virtuals, and ai16z.
+**Machine-Ready:** Strictly JSON output, designed for easy integration with frameworks like ElizaOS, Virtuals, and ai16z.
 
 ## 🛠 Integration Guide
 1. Endpoint & Authentication
