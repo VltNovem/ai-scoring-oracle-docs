@@ -21,7 +21,7 @@ Scoring Engine: A weighted 0–100 risk score optimized for high-frequency scalp
 
 Machine-Ready: Strictly JSON output, designed for easy integration with frameworks like ElizaOS, Virtuals, and ai16z.
 
-🛠 Integration Guide
+## 🛠 Integration Guide
 1. Endpoint & Authentication
 
 The API is currently in Beta. Access requires an X-API-KEY.
@@ -43,7 +43,7 @@ Mode B: Deep Scan (Contract Audit)
 Perform a full security audit on a specific contract.
 GET /analyze/0xad1da118f884df08b00fa6fe7b41a52912c17fbf
 
-💻 Code Example (Python)
+## 💻 Code Example (Python)
 code
 Python
 download
@@ -63,13 +63,15 @@ if data.get("risk_score", 100) < 30:
 else:
     print(f"⚠️ High Risk! Verdict: {data['verdict']}")
     print(f"Warnings: {data['warnings']}")
-📊 Understanding the Output
+
+## 📊 Understanding the Output
 Field	Description
 risk_score	0 (Safe) to 100 (Critical). Based on security, liquidity, and reputation.
 security_check	Detailed flags: is_honeypot, is_mintable, rugcheck_score.
 market_structure	Insider analysis: Top 10 concentration % and Sybil detection.
 warnings	Human-readable alerts (e.g., "High Insider Concentration").
-⚠️ Beta Limitations & Resources
+
+## ⚠️ Beta Limitations & Resources
 
 Rate Limits: During Beta, each key is limited to X requests per day.
 
@@ -77,23 +79,9 @@ Tavily Search: Deep sentiment analysis is limited by search credits.
 
 Uptime: Free-tier hosting may have a "cold start" delay of ~30 seconds.
 
-📨 Get a Test API Key
+## 📨 Get a Test API Key
 
 We are looking for 5 active developers to stress-test our Oracle.
 To get your free Master API Key, please reach out:
 
-Twitter/X: [@YourHandle]
-
-GitHub: [Open an Issue]
-
-Твои действия:
-
-Создай новый публичный репозиторий (например, ai-scoring-oracle-docs).
-
-Создай файл README.md и вставь туда этот текст.
-
-Обязательно замени заглушки в квадратных скобках (например, [@YourHandle]) на свои реальные контакты.
-
-Теперь у тебя есть профессиональная документация. Когда ты будешь писать разработчикам, ты будешь давать ссылку на этот README. Это сразу поднимает твой статус от "парня со скриптом" до "провайдера инфраструктуры".
-
-Что дальше? Ждем первых отзывов или идем "охотиться" на разработчиков в Twitter?
+email: vlt.novem@gmail.com
