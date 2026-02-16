@@ -26,19 +26,19 @@ Unlike generic LLMs, this oracle combines live on-chain security audits with rea
 
 The API is currently in Beta. Access requires an X-API-KEY.
 
-Base URL: https://ai-score-agent.onrender.com
+**Base URL:** https://ai-score-agent.onrender.com
 
-Method: GET
+**Method:** GET
 
-Header: X-API-KEY: YOUR_SECRET_KEY
+**Header:** X-API-KEY: YOUR_SECRET_KEY
 
 ### 2. Request Patterns
-Mode A: Discovery (Ticker Search)
+**Mode A:** Discovery (Ticker Search)
 
 Find the most liquid contract for a specific ticker.
 GET /analyze/PEPE
 
-Mode B: Deep Scan (Contract Audit)
+**Mode B:** Deep Scan (Contract Audit)
 
 Perform a full security audit on a specific contract.
 GET /analyze/0xad1da118f884df08b00fa6fe7b41a52912c17fbf
