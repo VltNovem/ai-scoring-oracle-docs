@@ -80,15 +80,15 @@ except Exception as e:
 
 ## ⚠️ Beta Limitations & Resources
 
-Rate Limits: During Beta, each key is limited to X requests per day.
+**Rate Limits**: During Beta, each key is limited to X requests per day.
 
-Tavily Search: Deep sentiment analysis is limited by search credits.
+**Tavily Search:** Deep sentiment analysis is limited by search credits.
 
-Uptime: Free-tier hosting may have a "cold start" delay of ~30 seconds.
+**Uptime:** Free-tier hosting may have a "cold start" delay of ~30 seconds.
 
 ## 📨 Get a Test API Key
 
 We are looking for 5 active developers to stress-test our Oracle.
 To get your free Master API Key, please reach out:
 
-email: vlt.novem@gmail.com
+**email: vlt.novem@gmail.com**
