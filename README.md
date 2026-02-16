@@ -78,13 +78,12 @@ except Exception as e:
 | `market_structure` | **Ownership Analysis**. Tracks Top 10 holder concentration and detects potential Sybil bot farms. |
 | `warnings` | **Risk Context**. Human-readable alerts for quick decision-making (e.g., *"High Insider Concentration"*). |
 
-## ⚠️ Beta Limitations & Resources
+## ⚠️ Beta Usage Guidelines
 
-**Rate Limits**: During Beta, each key is limited to X requests per day.
-
-**Tavily Search:** Deep sentiment analysis is limited by search credits.
-
-**Uptime:** Free-tier hosting may have a "cold start" delay of ~30 seconds.
+To ensure maximum precision and stability, the following limits apply to Beta API keys:
+- **Daily Quota:** 100 deep-scan requests per 24 hours.
+- **Rate Limit:** 1 request per 10 seconds (optimized for deep on-chain verification).
+- **Best Use Case:** High-conviction trade verification and final risk filtering.
 
 ## 📨 Get a Test API Key
 
