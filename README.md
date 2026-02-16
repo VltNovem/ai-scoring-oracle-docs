@@ -22,7 +22,7 @@ Unlike generic LLMs, this oracle combines live on-chain security audits with rea
 **Machine-Ready:** Strictly JSON output, designed for easy integration with frameworks like ElizaOS, Virtuals, and ai16z.
 
 ## 🛠 Integration Guide
-1. Endpoint & Authentication
+### 1. Endpoint & Authentication
 
 The API is currently in Beta. Access requires an X-API-KEY.
 
@@ -32,7 +32,7 @@ Method: GET
 
 Header: X-API-KEY: YOUR_SECRET_KEY
 
-2. Request Patterns
+### 2. Request Patterns
 Mode A: Discovery (Ticker Search)
 
 Find the most liquid contract for a specific ticker.
@@ -70,11 +70,13 @@ except Exception as e:
 ```
 
 ## 📊 Understanding the Output
-Field	Description
-risk_score	0 (Safe) to 100 (Critical). Based on security, liquidity, and reputation.
-security_check	Detailed flags: is_honeypot, is_mintable, rugcheck_score.
-market_structure	Insider analysis: Top 10 concentration % and Sybil detection.
-warnings	Human-readable alerts (e.g., "High Insider Concentration").
+
+| Field | Description |
+| :--- | :--- |
+| `risk_score` | **0 (Safe) to 100 (Critical)**. A weighted assessment of contract safety, liquidity depth, and reputation. |
+| `security_check` | **Hard-Security Flags**. Detailed audit results: `is_honeypot`, `is_mintable`, and `rugcheck_score`. |
+| `market_structure` | **Ownership Analysis**. Tracks Top 10 holder concentration and detects potential Sybil bot farms. |
+| `warnings` | **Risk Context**. Human-readable alerts for quick decision-making (e.g., *"High Insider Concentration"*). |
 
 ## ⚠️ Beta Limitations & Resources
 
