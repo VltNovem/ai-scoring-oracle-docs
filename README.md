@@ -2,14 +2,14 @@
 🛡️ Real-time Security &amp; Risk Intelligence API for AI Trading Agents. Machine-readable scoring (0-100) for Solana and EVM. Detect rugpulls, honeypots, and insider dumps before your agent trades. Optimized for the A2A economy (ElizaOS, ai16z). Live on-chain audits + insider concentration analysis. Machine-ready JSON for autonomous DAOs.
 
 
-🛡️ # Crypto Project Scoring Oracle (v4.1)
+# 🛡️ Crypto Project Scoring Oracle (v4.1)
 A Real-Time Security & Risk Intelligence Layer for AI Trading Agents
 
 The Crypto Project Scoring Oracle is a specialized API designed for the Agent-to-Agent (A2A) economy. It provides autonomous trading agents with a machine-readable "Veto Filter" to detect rugpulls, honeypots, and insider dumps before they execute a trade.
 
 Unlike generic LLMs, this oracle combines live on-chain security audits with real-time liquidity tracking and insider concentration analysis.
 
-🚀 Key Features for Agent Developers
+## 🚀 Key Features for Agent Developers
 
 Zero API Lag: Uses search-based indexing to see new token liquidity the second it hits the market.
 
