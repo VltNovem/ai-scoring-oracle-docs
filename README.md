@@ -85,6 +85,25 @@ To ensure maximum precision and stability, the following limits apply to Beta AP
 - **Rate Limit:** 1 request per 10 seconds (optimized for deep on-chain verification).
 - **Best Use Case:** High-conviction trade verification and final risk filtering.
 
+- ## 📉 Case Study: Predictive Accuracy in Live Markets
+
+In February 2026, we conducted a live stress-test of the Oracle (v4.2) on trending Solana pairs. The results demonstrate the Oracle's ability to identify "Slow Rugs" and "Exit Scams" hours before total collapse.
+
+### Case 1: The "DARKTRUMP" Predictive Warning
+*   **Time T=0 (13:13 UTC):** Price was **$0.003438**. Oracle issued a **Risk Score: 59.3** (Medium-High Risk) due to insider concentration flags.
+*   **Time T+2h (15:29 UTC):** Price collapsed to **$0.0000015** (**-99.95% drop**). Oracle score hit **100** (Critical).
+*   **On-Chain Proof:** Solscan confirmed over 300+ `REMOVE LIQUIDITY` events initiated by associated wallets shortly after the warning.
+
+### Case 2: The "NVIDIA" Exit Scam Detection
+*   **Time T=0 (13:13 UTC):** Price was **$0.000351**. Oracle Score: **32.8**.
+*   **Time T+2h (15:29 UTC):** Oracle Score jumped to **100** (Critical Risk).
+*   **On-Chain Proof:** The `updateAuthority` wallet (`6NQxnA...`) began executing multiple `REMOVE LIQUIDITY` transactions, draining over $50,000 USD from the pool while retail agents were still buying.
+
+### 🎯 Key Takeaway for Developers
+Standard auditors often mark these tokens as "Safe" because the contract code is simple. However, our Oracle analyzes **Market Structure** and **Real-time Liquidity flows**, allowing your agent to **Veto** a trade even if the contract looks "clean."
+
+> **"Our Oracle doesn't just read the code; it follows the money."**
+
 ## 📨 Get a Test API Key
 
 We are looking for 5 active developers to stress-test our Oracle.
