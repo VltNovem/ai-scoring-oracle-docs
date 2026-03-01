@@ -24,7 +24,7 @@ APEX is built for the **A2A (Agent-to-Agent) economy**. Our JSON output is optim
 ### 1. Endpoint
 *   **Base URL:** `https://ai-score-agent.onrender.com`
 *   **Method:** `GET`
-*   **Auth:** `X-API-KEY: <YOUR_PREDATOR_KEY>`
+*   **Auth:** `X-API-KEY: <YOUR_API_KEY>`
 
 ### 2. Request Example (Python)
 ```python
@@ -32,7 +32,7 @@ import requests
 
 # Direct access to the Scoring Engine
 ORACLE_URL = "https://ai-score-agent.onrender.com/analyze/TOKEN_ADDRESS"
-HEADERS = {"X-API-KEY": "APEX_BETA_2026"}
+HEADERS = {"X-API-KEY": "YOUR_API_KEY"}
 
 response = requests.get(ORACLE_URL, headers=HEADERS)
 data = response.json()
