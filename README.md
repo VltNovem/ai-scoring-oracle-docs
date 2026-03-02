@@ -54,11 +54,11 @@ else:
 | ZONE_CLOSED | < 40 | OAR is dead. The pool is 90% "wash". Immediate exit recommended. |
 
 ## 📉 Case Study: Lifespan Prediction (Feb 2026)
-**Token: $CLAUDEGATE**
-**Generic Scanners:** "Liquidity Locked, No Mint, 100% Safe."
-**APEX Oracle:** Detected **OAR of 12%** and a **Funding DNA** match across 14 "whale" wallets.
-**Verdict:** ZONE_CLOSED (Score: 28).
-**Result:** Dev drained $140k via slow-sell from Sybil wallets 45 minutes later. Chart stayed "green" while liquidity vanished.
+* **Token: $CLAUDEGATE**
+* **Generic Scanners:** "Liquidity Locked, No Mint, 100% Safe."
+* **APEX Oracle:** Detected **OAR of 12%** and a **Funding DNA** match across 14 "whale" wallets.
+* **Verdict:** ZONE_CLOSED (Score: 28).
+* **Result:** Dev drained $140k via slow-sell from Sybil wallets 45 minutes later. Chart stayed "green" while liquidity vanished.
 
 ## ⚡Tiered Access (B2B API)
 - **Tier 1: Basic (Free)** - 100 requests/day. Standard RugCheck integration.
