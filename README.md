@@ -1,4 +1,4 @@
-# 🦅 APEX ORACLE (v0.5.0 "Gambler Edition")
+# 🦅 APEX ORACLE (v0.6.5 "Paper Castle Edition")
 ### *Edge-Oriented Scoring & Pressure Engine for Solana Trading Agents*
 
 **Stop looking for "safe" projects. They don't exist.** 
@@ -6,20 +6,23 @@ In a market where 99% of tokens are engineered to fail, **APEX Oracle** shifts t
 
 ---
 
-## ⚡ The Predator's Edge: Key Metrics
+## ⚡ The Predator's Edge: Core Capabilities
 
-Unlike generic scanners, APEX v0.5.0 analyzes the **micro-structure of the kill zone**:
+Unlike generic security scanners, APEX v0.6.5 analyzes the **micro-structure of the kill zone** across multiple dimensions without revealing its proprietary calculation weights:
 
-*   **OAR (Organic Absorption Ratio):** The ultimate filter. It calculates the ratio of real external liquidity vs. circular wash-trading. If OAR < 40%, you are the exit liquidity.
-*   **Funding DNA:** Traces the "ancestor wallets" of top holders. If 8 out of 10 whales were funded by the same CEX sub-wallet within a 3-minute window, it’s a Sybil cluster.
-*   **Insider Velocity Layer:** Tracks the real-time shift in supply concentration between blocks. We see the dump before it hits the chart.
-*   **Jito/MEV Toxicity:** Analyzes the last 15-50 transactions for Jito bundles and sandwich-bot density to determine if the pool is a "Toxic Battle Zone".
+*   **OAR (Organic Absorption Ratio):** The ultimate filter. It calculates the ratio of real external liquidity vs. orchestrated wash-trading. If OAR is critically low, you are the exit liquidity.
+*   **Funding DNA & Sybil Mapping:** Traces the complex "ancestor" wallet structures of top holders to identify hidden developer clusters.
+*   **Insider Exit Velocity:** Tracks the real-time shift in supply concentration. We measure the underlying dump pressure before it significantly impacts the chart.
+*   **Paper Castle Guard (FDV/Liq Ratio):** Detects artificially inflated market caps. If a token's Fully Diluted Valuation is massively disconnected from its aggregated backing liquidity, the Oracle instantly flags it as a fragile "Paper Castle."
+*   **Cross-DEX Aggregation & Fake Volume Shield:** Aggregates real-time data across all fragmented liquidity pools. Instantly penalizes tokens that spoof massive trading volumes in dead or illiquid pools.
+*   **Anti-Dump Guard:** Immediate restriction protocol ("Falling Knife" protection) that locks trading zones during terminal price cascades.
+*   **MEV Toxicity Index:** Analyzes on-chain transactional density to determine the probability of your agent being sandwiched or front-run by predatory bots.
 
 ---
 
 ## 🛠 Machine-to-Machine Integration
 
-APEX is built for the **A2A (Agent-to-Agent) economy**. Our JSON output is optimized for instant decision-making by autonomous trading frameworks (ElizaOS, ai16z, custom Jito-bots).
+APEX is built for the **A2A (Agent-to-Agent) economy**. Our JSON output is strictly standardized for instant, non-blocking decision-making by autonomous trading frameworks (ElizaOS, ai16z, custom sniper bots).
 
 ### 1. Endpoint
 *   **Base URL:** `https://ai-score-agent.onrender.com`
@@ -37,38 +40,55 @@ HEADERS = {"X-API-KEY": "YOUR_API_KEY"}
 response = requests.get(ORACLE_URL, headers=HEADERS)
 data = response.json()
 
-# The 'opportunity_score' is your primary PnL-edge indicator
-if data['opportunity_score'] > 80:
-    print(f"🚀 VERDICT: {data['verdict']} | Window is OPEN.")
-    print(f"OAR: {data['oar_score']}% | Sybil Risk: {data['sybil_index']}")
+# Extracting core PnL metrics
+score = data.get('opportunity_score', 0)
+verdict = data.get('verdict', 'UNKNOWN')
+metrics = data.get('predator_metrics', {})
+window = data.get('extraction_window', {})
+
+if score > 80:
+    print(f"🚀 VERDICT: {verdict} | Window is OPEN.")
+    print(f"OAR: {metrics.get('organic_absorption_ratio')}% | Expected Lifespan: {window.get('expected_lifespan')}")
 else:
-    print(f"🛑 VERDICT: {data['verdict']} | Reason: {data['warnings'][0]}")
+    print(f"🛑 VERDICT: {verdict} | Engine Blocked.")
+    print(f"Critical Warnings: {data.get('warnings',[])}")
 ```
+
+---
+
 ## 📊 Logic & Verdicts
-| Verdict | Score | Description |
-|---------|-------|-------------|
-| OPPORTUNITY_MAX | 80 - 100 | Low Sybil density + High OAR. High probability of an organic run. |
-| HUNTING_ALLOWED | 60 - 80 | Professional "Gambler" zone. High risk, but clear PnL-window exists. |
-| TOXIC_BATTLE_ZONE | MEV > 70% | High Jito/MEV activity. You will be sandwiched or frontrun. |
-| CAUTION_REQUIRED | 40 - 60 | Developing Sybil clusters. Dev is likely preparing the exit. |
-| ZONE_CLOSED | < 40 | OAR is dead. The pool is 90% "wash". Immediate exit recommended. |
 
-## 📉 Case Study: Lifespan Prediction (Feb 2026)
-* **Token: $CLAUDEGATE**
-* **Generic Scanners:** "Liquidity Locked, No Mint, 100% Safe."
-* **APEX Oracle:** Detected **OAR of 12%** and a **Funding DNA** match across 14 "whale" wallets.
-* **Verdict:** ZONE_CLOSED (Score: 28).
-* **Result:** Dev drained $140k via slow-sell from Sybil wallets 45 minutes later. Chart stayed "green" while liquidity vanished.
+APEX Oracle translates complex on-chain data into actionable, PnL-driven verdicts. 
 
-## ⚡Tiered Access (B2B API)
-- **Tier 1: Basic (Free)** - 100 requests/day. Standard RugCheck integration.
-- **Tier 2: Predator** - 5,000 requests/day. Full OAR + Sybil DNA + Jito Toxicity.
-- **Tier 3: Apex Engine** - Unlimited. WebSocket stream + Early Lifespan Prediction Heuristics.
+| Verdict | Score Range | Engine Assessment & Agent Action |
+|---------|:---:|-------------|
+| **OPPORTUNITY_MAX** | `80 - 100` | **Clear PnL Window.** Low Sybil density, high organic absorption, and healthy liquidity backing. Favorable conditions for aggressive entry. |
+| **HUNTING_ALLOWED** | `60 - 80` | **Professional Gambler Zone.** Moderate risk. A measurable PnL-window exists, but strict take-profit execution and tight slippage control are mandatory. |
+| **CAUTION_REQUIRED** | `40 - 60` | **Deteriorating Conditions.** Developing Sybil clusters or rising Insider Exit Velocity. Dev is likely staging an exit. Only suitable for hyper-fast scalping. |
+| **ZONE_CLOSED** | `< 40` | **Terminal State.** OAR is dead, extreme Paper Castle ratio detected, or an active 70%+ dump is in progress. **Immediate exit / Entry blocked.** |
+| **TOXIC_BATTLE_ZONE** | `Dynamic` | **Hostile Environment.** Critical MEV/Sandwich bot density detected. Organic trades will be systematically drained via slippage manipulation. Avoid. |
+
+---
+
+## 📉 Case Study: Paper Castle & Fake Volume (March 2026)
+* **Token:** `$HYPERAI`
+* **Generic Scanners:** "Liquidity Locked, Contract Renounced, $10M Market Cap."
+* **APEX Oracle:** Detected a severe **DEX Mismatch** ($2M volume in a dead pump.fun pool) and an extreme **FDV/Liquidity Ratio** (Market Cap was 150x the actual liquidity). 
+* **Verdict:** ZONE_CLOSED (Score: 12).
+* **Result:** Token collapsed 92% in 14 minutes when a hidden dev cluster sold just $40k worth of tokens, completely draining the fragmented liquidity. APEX Agents were blocked from entry.
+
+---
+
+## ⚡ Tiered Access (B2B API)
+- **Tier 1: Developer Beta (Free)** - 100 requests/day. Access to core scoring and basic metrics.
+- **Tier 2: Predator Framework** - 5,000 requests/day. Full OAR mapping, Sybil DNA, and Fake Volume Guard.
+- **Tier 3: Apex Enterprise** - Unlimited throughput. Zero-latency infrastructure, stealth-masking, and early Lifespan Prediction heuristics for institutional bot farms.
 
 ## 📨 Secure Your Access
-We are currently onboarding professional bot developers and fund managers for the **v0.5.0 Beta**.
-- **Telegram:** [https://t.me/rd9analytics]
-- **Email:** vlt.novem@gmail.com
-- **X (Twitter):** [https://x.com/9rd_analytics]
+We are currently onboarding professional bot developers, algorithmic traders, and Alpha funds for the **v0.6.5 Beta**.
 
-*"In the Solana jungle, you are either the Predator or the Meat. Choose your Oracle wisely."*
+- **Telegram:** https://t.me/rd9analytics
+- **Email:** vlt.novem@gmail.com
+- **X (Twitter):https://x.com/9rd_analytics
+  
+"In the Solana jungle, you are either the Predator or the Meat. Choose your Oracle wisely."
