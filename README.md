@@ -89,6 +89,6 @@ We are currently onboarding professional bot developers, algorithmic traders, an
 
 - **Telegram:** https://t.me/rd9analytics
 - **Email:** vlt.novem@gmail.com
-- **X (Twitter):https://x.com/9rd_analytics
+- **X (Twitter):** https://x.com/9rd_analytics
   
 "In the Solana jungle, you are either the Predator or the Meat. Choose your Oracle wisely."
