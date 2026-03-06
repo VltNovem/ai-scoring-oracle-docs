@@ -91,4 +91,4 @@ We are currently onboarding professional bot developers, algorithmic traders, an
 - **Email:** vlt.novem@gmail.com
 - **X (Twitter):** https://x.com/9rd_analytics
   
-"In the Solana jungle, you are either the Predator or the Meat. Choose your Oracle wisely."
+_In the Solana jungle, you are either the Predator or the Meat. Choose your Oracle wisely._
