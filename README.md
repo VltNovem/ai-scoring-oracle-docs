@@ -1,94 +1,70 @@
-# 🦅 APEX ORACLE (v0.6.5 "Paper Castle Edition")
-### *Edge-Oriented Scoring & Pressure Engine for Solana Trading Agents*
+# 🦅 APEX ORACLE (v0.8.7 "Window Hunter Edition")
+### *Decisional Intelligence Layer for Solana AI Agents*
 
 **Stop looking for "safe" projects. They don't exist.** 
-In a market where 99% of tokens are engineered to fail, **APEX Oracle** shifts the paradigm from *Security Auditing* to *PnL-Window Estimation*. We don't tell you if a token is a scam — we tell you how much "meat" (organic liquidity) is in the room and how much time you have before the "predators" (devs) pull the trigger.
+APEX Oracle v0.8.7 is the first engine designed to detect **PnL Windows** in toxic environments. We don't just audit code; we calculate the time remaining before liquidity extraction using advanced Momentum & Pressure analytics.
 
 ---
 
-## ⚡ The Predator's Edge: Core Capabilities
+## ⚡ Core Capabilities (The Decisional Edge)
 
-Unlike generic security scanners, APEX v0.6.5 analyzes the **micro-structure of the kill zone** across multiple dimensions without revealing its proprietary calculation weights:
+APEX analyzes the **micro-structure of the kill zone** across dimensions that generic scanners ignore:
 
-*   **OAR (Organic Absorption Ratio):** The ultimate filter. It calculates the ratio of real external liquidity vs. orchestrated wash-trading. If OAR is critically low, you are the exit liquidity.
-*   **Funding DNA & Sybil Mapping:** Traces the complex "ancestor" wallet structures of top holders to identify hidden developer clusters.
-*   **Insider Exit Velocity:** Tracks the real-time shift in supply concentration. We measure the underlying dump pressure before it significantly impacts the chart.
-*   **Paper Castle Guard (FDV/Liq Ratio):** Detects artificially inflated market caps. If a token's Fully Diluted Valuation is massively disconnected from its aggregated backing liquidity, the Oracle instantly flags it as a fragile "Paper Castle."
-*   **Cross-DEX Aggregation & Fake Volume Shield:** Aggregates real-time data across all fragmented liquidity pools. Instantly penalizes tokens that spoof massive trading volumes in dead or illiquid pools.
-*   **Anti-Dump Guard:** Immediate restriction protocol ("Falling Knife" protection) that locks trading zones during terminal price cascades.
-*   **MEV Toxicity Index:** Analyzes on-chain transactional density to determine the probability of your agent being sandwiched or front-run by predatory bots.
+*   **SPECULATIVE_HUNT (Momentum Bypass):** Identifies high-momentum "rug-traps" where retail FOMO temporarily overrides insider sell pressure, creating 5-15 minute profit windows.
+*   **OAR (Organic Absorption Ratio):** Measures real retail buy-in vs. orchestrated wash-trading.
+*   **Insider Exit Velocity:** Tracks supply concentration shifts in real-time. We see the dump starting before it hits the chart.
+*   **Dynamic Slippage Matrix:** Non-linear price impact calculations for different order sizes ($100 to $5000), allowing agents to size positions scientifically.
+*   **Config Integrity Hash:** Every verdict is signed with a unique `config_hash`, ensuring full transparency and traceability of the scoring model used.
 
 ---
 
-## 🛠 Machine-to-Machine Integration
+## 🛠 Integration Specs
 
-APEX is built for the **A2A (Agent-to-Agent) economy**. Our JSON output is strictly standardized for instant, non-blocking decision-making by autonomous trading frameworks (ElizaOS, ai16z, custom sniper bots).
+APEX is built for the **A2A (Agent-to-Agent) economy**. JSON output is strictly standardized for non-blocking decision-making by autonomous trading frameworks (ElizaOS, custom bots).
 
-### 1. Endpoint
-*   **Base URL:** `https://ai-score-agent.onrender.com`
+### Endpoint
+*   **URL:** `https://ai-score-agent.onrender.com/analyze/{token_address}`
 *   **Method:** `GET`
-*   **Auth:** `X-API-KEY: <YOUR_API_KEY>`
+*   **Auth:** `x-api-key: <YOUR_API_KEY>`
 
-### 2. Request Example (Python)
-```python
-import requests
-
-# Direct access to the Scoring Engine
-ORACLE_URL = "https://ai-score-agent.onrender.com/analyze/TOKEN_ADDRESS"
-HEADERS = {"X-API-KEY": "YOUR_API_KEY"}
-
-response = requests.get(ORACLE_URL, headers=HEADERS)
-data = response.json()
-
-# Extracting core PnL metrics
-score = data.get('opportunity_score', 0)
-verdict = data.get('verdict', 'UNKNOWN')
-metrics = data.get('predator_metrics', {})
-window = data.get('extraction_window', {})
-
-if score > 80:
-    print(f"🚀 VERDICT: {verdict} | Window is OPEN.")
-    print(f"OAR: {metrics.get('organic_absorption_ratio')}% | Expected Lifespan: {window.get('expected_lifespan')}")
-else:
-    print(f"🛑 VERDICT: {verdict} | Engine Blocked.")
-    print(f"Critical Warnings: {data.get('warnings',[])}")
+### Response Architecture (v0.8.7)
+```json
+{
+  "version": "0.8.7",
+  "config_hash": "af8d3aecde0c",
+  "verdict": "SPECULATIVE_HUNT",
+  "opportunity_score": 45.2,
+  "extraction_window": {
+    "expected_lifespan": "Terminal (5-15 mins)",
+    "slippage_grid_usd": {
+      "100": 1.2,
+      "500": 5.8,
+      "1000": 12.4,
+      "5000": 45.0
+    }
+  }
+}
 ```
 
 ---
 
 ## 📊 Logic & Verdicts
 
-APEX Oracle translates complex on-chain data into actionable, PnL-driven verdicts. 
-
-| Verdict | Score Range | Engine Assessment & Agent Action |
+| Verdict | Strategy | Engine Assessment |
 |---------|:---:|-------------|
-| **OPPORTUNITY_MAX** | `80 - 100` | **Clear PnL Window.** Low Sybil density, high organic absorption, and healthy liquidity backing. Favorable conditions for aggressive entry. |
-| **HUNTING_ALLOWED** | `60 - 80` | **Professional Gambler Zone.** Moderate risk. A measurable PnL-window exists, but strict take-profit execution and tight slippage control are mandatory. |
-| **CAUTION_REQUIRED** | `40 - 60` | **Deteriorating Conditions.** Developing Sybil clusters or rising Insider Exit Velocity. Dev is likely staging an exit. Only suitable for hyper-fast scalping. |
-| **ZONE_CLOSED** | `< 40` | **Terminal State.** OAR is dead, extreme Paper Castle ratio detected, or an active 70%+ dump is in progress. **Immediate exit / Entry blocked.** |
-| **TOXIC_BATTLE_ZONE** | `Dynamic` | **Hostile Environment.** Critical MEV/Sandwich bot density detected. Organic trades will be systematically drained via slippage manipulation. Avoid. |
+| **OPPORTUNITY_MAX** | **Aggressive Buy** | High organic demand, low Sybil density. Solid window. |
+| **HUNTING_ALLOWED** | **Tactical Entry** | Measurable PnL-window exists. Trailing stop mandatory. |
+| **SPECULATIVE_HUNT** | **High-Speed Scalp** | Toxic asset with extreme momentum. Exit in <15 mins. |
+| **ZONE_CLOSED** | **Hard Skip** | Terminal risk. Dump in progress or "Paper Castle" detected. |
+| **TOXIC_BATTLE_ZONE** | **Hard Skip** | Critical MEV/Sandwich bot density. Avoid. |
 
 ---
 
-## 📉 Case Study: Paper Castle & Fake Volume (March 2026)
-* **Token:** `$HYPERAI`
-* **Generic Scanners:** "Liquidity Locked, Contract Renounced, $10M Market Cap."
-* **APEX Oracle:** Detected a severe **DEX Mismatch** ($2M volume in a dead pump.fun pool) and an extreme **FDV/Liquidity Ratio** (Market Cap was 150x the actual liquidity). 
-* **Verdict:** ZONE_CLOSED (Score: 12).
-* **Result:** Token collapsed 92% in 14 minutes when a hidden dev cluster sold just $40k worth of tokens, completely draining the fragmented liquidity. APEX Agents were blocked from entry.
+## 📚 Documentation
+*   [Execution Playbook](./EXECUTION_PLAYBOOK.md) — Implementation guide for bot developers.
 
----
-
-## ⚡ Tiered Access (B2B API)
-- **Tier 1: Developer Beta (Free)** - 100 requests/day. Access to core scoring and basic metrics.
-- **Tier 2: Predator Framework** - 5,000 requests/day. Full OAR mapping, Sybil DNA, and Fake Volume Guard.
-- **Tier 3: Apex Enterprise** - Unlimited throughput. Zero-latency infrastructure, stealth-masking, and early Lifespan Prediction heuristics for institutional bot farms.
-
-## 📨 Secure Your Access
-We are currently onboarding professional bot developers, algorithmic traders, and Alpha funds for the **v0.6.5 Beta**.
-
+## 📨 Secure Your Access (Closed Beta)
+We are onboarding a limited number of professional developers for stress-testing.
 - **Telegram:** https://t.me/rd9analytics
-- **Email:** vlt.novem@gmail.com
 - **X (Twitter):** https://x.com/9rd_analytics
-  
-_In the Solana jungle, you are either the Predator or the Meat. Choose your Oracle wisely._
+- **email:** vlt.novem@gmail.com
